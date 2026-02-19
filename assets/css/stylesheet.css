@@ -1,0 +1,224 @@
+@font-face {
+    font-family: 'DM Sans 18pt';
+    src: url('../fonts/DMSans18pt-Bold.woff2') format('woff2'),
+        url('../fonts/DMSans18pt-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 18pt';
+    src: url('../fonts/DMSans18pt-Black.woff2') format('woff2'),
+        url('../fonts/DMSans18pt-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 18pt';
+    src: url('../fonts/DMSans18pt-ExtraBold.woff2') format('woff2'),
+        url('../fonts/DMSans18pt-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 18pt';
+    src: url('../fonts/DMSans18pt-Medium.woff2') format('woff2'),
+        url('../fonts/DMSans18pt-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 18pt';
+    src: url('../fonts/DMSans18pt-Regular.woff2') format('woff2'),
+        url('../fonts/DMSans18pt-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 18pt';
+    src: url('../fonts/DMSans18pt-SemiBold.woff2') format('woff2'),
+        url('../fonts/DMSans18pt-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 24pt';
+    src: url('../fonts/DMSans24pt-Black.woff2') format('woff2'),
+        url('../fonts/DMSans24pt-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 24pt';
+    src: url('../fonts/DMSans24pt-Bold.woff2') format('woff2'),
+        url('../fonts/DMSans24pt-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 24pt';
+    src: url('../fonts/DMSans24pt-ExtraBold.woff2') format('woff2'),
+        url('../fonts/DMSans24pt-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 24pt';
+    src: url('../fonts/DMSans24pt-Medium.woff2') format('woff2'),
+        url('../fonts/DMSans24pt-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 24pt';
+    src: url('../fonts/DMSans24pt-Regular.woff2') format('woff2'),
+        url('../fonts/DMSans24pt-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 24pt';
+    src: url('../fonts/DMSans24pt-SemiBold.woff2') format('woff2'),
+        url('../fonts/DMSans24pt-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 36pt';
+    src: url('../fonts/DMSans36pt-Black.woff2') format('woff2'),
+        url('../fonts/DMSans36pt-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 36pt';
+    src: url('../fonts/DMSans36pt-Bold.woff2') format('woff2'),
+        url('../fonts/DMSans36pt-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 36pt';
+    src: url('../fonts/DMSans36pt-ExtraBold.woff2') format('woff2'),
+        url('../fonts/DMSans36pt-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 36pt';
+    src: url('../fonts/DMSans36pt-Medium.woff2') format('woff2'),
+        url('../fonts/DMSans36pt-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 36pt';
+    src: url('../fonts/DMSans36pt-Regular.woff2') format('woff2'),
+        url('../fonts/DMSans36pt-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans 36pt';
+    src: url('../fonts/DMSans36pt-SemiBold.woff2') format('woff2'),
+        url('../fonts/DMSans36pt-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('../fonts/DMSans-Black.woff2') format('woff2'),
+        url('../fonts/DMSans-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('../fonts/DMSans-Bold.woff2') format('woff2'),
+        url('../fonts/DMSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('../fonts/DMSans-ExtraBold.woff2') format('woff2'),
+        url('../fonts/DMSans-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('../fonts/DMSans-Medium.woff2') format('woff2'),
+        url('../fonts/DMSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('../fonts/DMSans-Regular.woff2') format('woff2'),
+        url('../fonts/DMSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('../fonts/DMSans-SemiBold.woff2') format('woff2'),
+        url('../fonts/DMSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../fonts/BebasNeue-Regular.woff2') format('woff2'),
+        url('../fonts/BebasNeue-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
