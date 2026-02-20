@@ -1,7 +1,7 @@
 @import url(./stylesheet.css);
 
 /* ==========================
-   Reset & Base
+   Base / Reset
    ========================== */
 *,
 *::before,
@@ -128,10 +128,10 @@ q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
   content: none;
 }
 
@@ -145,27 +145,24 @@ table {
   border-spacing: 0;
 }
 
-/* ==========================
-   CSS Variables
-   ========================== */
+a {
+  text-decoration: none !important;
+}
+
 :root {
   --color-amber: #FBC120;
   --color-green-apple: #A1C73F;
   --color-sky-blue: #2DA9E2;
   --color-deep-purple: #3E2B47;
   --color-amber-50: #FBC12080;
-  --color-amber-39: #FBC12064;
-  --color-amber-10: #FBC12019;
   --color-white: #FFFFFF;
   --color-white-70: #FFFFFFB2;
   --color-white-60: #FFFFFF9A;
   --color-white-50: #FFFFFF80;
   --color-white-30: #FFFFFF4D;
-  --color-purple-10: #3E2B471A;
   --hover2outcl: #3BB8B8;
   --hover4outcl: #A1C73F;
   --hover3outcl: #2DA9E2;
-
   --font-size-hero: clamp(55px, 10vw, 140px);
   --font-size-display-lg: clamp(48px, 6vw, 80px);
   --font-size-display-md: clamp(42px, 5.5vw, 72px);
@@ -179,10 +176,6 @@ table {
   --font-size-sm: clamp(14px, 1.8vw, 18px);
 }
 
-a {
-  text-decoration: none !important;
-}
-
 /* ==========================
    Typography
    ========================== */
@@ -192,18 +185,6 @@ a {
 
 .ff-DM-Sans {
   font-family: "DM Sans", sans-serif;
-}
-
-.ff-DM-Sans-18pt {
-  font-family: "DM Sans 18pt", sans-serif;
-}
-
-.ff-DM-Sans-24pt {
-  font-family: "DM Sans 24pt", sans-serif;
-}
-
-.ff-DM-Sans-36pt {
-  font-family: "DM Sans 36pt", sans-serif;
 }
 
 .fw-bold {
@@ -323,29 +304,6 @@ a {
 }
 
 /* ==========================
-   Spacing & Sizing Utilities
-   ========================== */
-.mb-32 {
-  margin-bottom: 32px;
-}
-
-.mt-150 {
-  margin-top: clamp(50px, 5vw, 150px);
-}
-
-.mb-90 {
-  padding-top: 90px;
-}
-
-.w-194 {
-  width: 194px !important;
-}
-
-.pt-139 {
-  padding-top: 139px !important;
-}
-
-/* ==========================
    Layout
    ========================== */
 .container,
@@ -375,9 +333,97 @@ a {
   padding-left: 51px;
 }
 
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 82px;
+}
+
+.grid-4 .box {
+  background-color: var(--color-white);
+  border-radius: 80px 0;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  outline: 1px solid var(--color-amber);
+  aspect-ratio: 1.7;
+  transition: all 0.3s ease-in-out;
+}
+
+.grid-4 .box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 20px var(--color-amber-50);
+}
+
+.grid-4 .box img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.box-wrapper,
+.box-wrapper-reverse {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+}
+
+.box-wrapper .box p,
+.box-wrapper-reverse .box p {
+  max-width: 645px;
+}
+
+.box-wrapper .box-fig img,
+.box-wrapper-reverse .box-fig img {
+  max-width: 513px;
+  border-radius: 80px 0;
+}
+
+.full-width-section {
+  margin-top: -270px;
+  pointer-events: none;
+}
+
+.full-width-section img {
+  width: 100%;
+  display: block;
+}
+
 /* ==========================
-   Navbar
+   Utilities
    ========================== */
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.mb-90 {
+  padding-top: 90px;
+}
+
+.mt-150 {
+  margin-top: clamp(50px, 5vw, 150px);
+}
+
+.mt-clients {
+  margin-top: -150px !important;
+}
+
+.pt-139 {
+  padding-top: 139px !important;
+}
+
+.w-194 {
+  width: 194px !important;
+}
+
+/* ==========================
+   Components
+   ========================== */
+/* Navbar */
 .navbar-brand img {
   margin-left: clamp(10px, 2vw, 32px);
   padding: clamp(0, 1.5vw, 24.5px) 0;
@@ -388,7 +434,7 @@ a {
 }
 
 .navbar-toggler {
-  border-color: rgba(255, 255, 255, .5);
+  border-color: rgba(255, 255, 255, 0.5);
   background-color: var(--color-amber);
 }
 
@@ -401,16 +447,9 @@ a {
   display: inline-block;
   width: 8px;
   height: 8px;
-  border-bottom: 2px solid white;
-  border-right: 2px solid white;
-  transform: rotate(45deg);
+  border: 0 2px 2px 0 solid white;
   margin-left: 5px;
   vertical-align: 2px;
-}
-
-.navbar-nav .dropdown-toggle:hover::after {
-  border-bottom-color: var(--color-amber);
-  border-right-color: var(--color-amber);
 }
 
 .navbar-expand-lg .navbar-nav .dropdown-menu {
@@ -424,9 +463,7 @@ a {
   transition: .8s ease-out;
 }
 
-/* ==========================
-   Offcanvas
-   ========================== */
+/* Offcanvas */
 .offcanvas-body {
   background-color: var(--color-amber);
 }
@@ -435,9 +472,7 @@ a {
   width: 300px;
 }
 
-/* ==========================
-   Buttons
-   ========================== */
+/* Buttons */
 .hero-btn-custom,
 .parallel-btn-custom,
 .service-btn-custom {
@@ -445,7 +480,6 @@ a {
   width: 250px;
   margin-top: 40px;
   border-radius: 40px;
-  box-shadow: none;
   outline: none;
   position: relative;
   overflow: hidden;
@@ -504,7 +538,8 @@ a {
   left: 0;
 }
 
-.hero-btn-custom:hover {
+.hero-btn-custom:hover,
+.parallel-btn-custom:hover {
   color: var(--color-deep-purple) !important;
   border-color: var(--color-deep-purple);
 }
@@ -535,67 +570,9 @@ a {
   filter: brightness(0) invert(1);
 }
 
-/* ==========================
-   Box & Grid Components
-   ========================== */
-.box-wrapper,
-.box-wrapper-reverse {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  align-items: center;
-}
-
-.box-wrapper .box p,
-.box-wrapper-reverse .box p {
-  max-width: 645px;
-}
-
-.box-wrapper .box-fig img,
-.box-wrapper-reverse .box-fig img {
-  max-width: 513px;
-  border-radius: 80px 0;
-}
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 82px;
-}
-
-.grid-4 .box {
-  background-color: var(--color-white);
-  border-radius: 80px 0;
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  outline: 1px solid var(--color-amber);
-  aspect-ratio: 1.7;
-  transition: all 0.3s ease-in-out;
-}
-
-.grid-4 .box:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 20px var(--color-amber-50);
-}
-
-.grid-4 .box img {
-  max-width: 80%;
-  max-height: 80%;
-  object-fit: contain;
-}
-
-/* ==========================
-   Hero Section
-   ========================== */
+/* Hero */
 .hero {
-  background-image: url('../images/banner.jpg');
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url('../images/banner.jpg') bottom/cover no-repeat;
 }
 
 .hero-text {
@@ -603,26 +580,12 @@ a {
 }
 
 .hero-p-custom {
-  line-height: 26px;
-  margin: 0 auto;
   max-width: 586px;
+  margin: 0 auto;
   padding-top: 15px;
 }
 
-.full-width-section {
-  margin-top: -270px;
-  pointer-events: none;
-}
-
-.full-width-section img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ==========================
-   Parallel Section
-   ========================== */
+/* Parallel */
 .parallel {
   margin-top: clamp(-270px, -10vw, 0px);
   padding-bottom: clamp(100px, 10vw, 200px);
@@ -640,9 +603,7 @@ a {
   width: clamp(200px, 30vw, 500px);
 }
 
-/* ==========================
-   Clients Section
-   ========================== */
+/* Clients */
 .clients {
   width: 100%;
   margin-top: -20px;
@@ -654,21 +615,14 @@ a {
   position: relative;
 }
 
-.mt-clients {
-  margin-top: -150px !important;
-}
-
-/* ==========================
-   Case Studies Section
-   ========================== */
+/* Case Studies */
 .case-studies {
   position: relative;
   margin-top: -250px;
   padding-bottom: 283px;
   z-index: 2;
   background-color: var(--color-white);
-  border-bottom-left-radius: 30vw;
-  border-top-left-radius: 30vw;
+  border-radius: 30vw 0 0;
 }
 
 .video-box {
@@ -682,14 +636,13 @@ a {
   width: 100%;
 }
 
-.case-video .video-container,
-.case-video1 .video-container {
+.video-container {
   overflow: hidden;
   position: relative;
   width: 100%;
   height: 100%;
   z-index: 1;
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  -webkit-mask-image: radial-gradient(white, black);
   mask-image: radial-gradient(white, black);
   transform: translateZ(0);
 }
@@ -710,17 +663,14 @@ a {
 .video-container::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.5);
   pointer-events: none;
   z-index: 1;
   transition: opacity 0.2s ease;
 }
 
-@keyframes expandOverlayColor {
+@keyframes expandOverlay {
   0% {
     background-color: var(--overlay-start, var(--color-green-apple));
   }
@@ -733,21 +683,18 @@ a {
 .video-container::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: 2;
   transform: scale(0);
   background-color: var(--overlay-end, var(--color-deep-purple));
-  transition: transform 0.8s ease-in-out, background-color 0s;
+  transition: transform 0.8s ease-in-out;
   pointer-events: none;
   border-radius: inherit;
 }
 
 .video-box li:hover .video-container::before {
   transform: scale(1);
-  animation: expandOverlayColor 0.8s forwards ease-in-out;
+  animation: expandOverlay 0.8s forwards ease-in-out;
 }
 
 .video-box li {
@@ -794,13 +741,10 @@ a {
   transform: translateY(-50%);
 }
 
-/* ==========================
-   Services Section
-   ========================== */
+/* Services */
 .services {
   position: relative;
-  padding-top: 480px;
-  padding-bottom: 410px;
+  padding: 480px 0 410px;
   margin-top: -480px;
   width: 100%;
   background: linear-gradient(to bottom, #F8F2E7 0%, #EBE9EC 100%);
@@ -835,15 +779,13 @@ a {
   border-radius: 100px 0;
 }
 
-/* ==========================
-   News Section
-   ========================== */
+/* News */
 .news {
   position: relative;
   padding-top: 263px;
   margin-top: -410px;
   background-color: var(--color-white);
-  border-top-left-radius: 25vw;
+  border-radius: 25vw 0 0;
   padding-bottom: 250px;
 }
 
@@ -866,9 +808,7 @@ a {
   overflow: hidden;
   z-index: 1;
   width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: center/cover no-repeat;
   padding: 30px 58px;
   margin-bottom: 42px;
   transform: translateZ(0);
@@ -894,10 +834,7 @@ a {
 .news-rect2::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   opacity: 0.4;
   z-index: -1;
   pointer-events: none;
@@ -905,23 +842,31 @@ a {
 }
 
 .news-rect1::before {
-  background: transparent linear-gradient(122deg, #3E2B47 0%, #FBC12064 100%) 0% 0% no-repeat padding-box;
+  background: linear-gradient(122deg, #3E2B47 0%, #FBC12064 100%);
   border-radius: 80px 0px;
 }
 
 .news-rect2::before {
-  background: transparent linear-gradient(238deg, #3E2B47 0%, #FBC12080 100%) 0% 0% no-repeat padding-box;
+  background: linear-gradient(238deg, #3E2B47 0%, #FBC12080 100%);
   border-radius: 0px 100px;
 }
 
 .news-rect1:hover::before,
 .news-rect2:hover::before {
   background-position: 100% 0%;
+  opacity: 0.8;
 }
 
 .news-button {
   width: 160px !important;
   height: 40px !important;
+  background-color: var(--color-amber);
+  border-radius: 40px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 
 .news .content p {
@@ -958,15 +903,13 @@ a {
   color: var(--color-white) !important;
 }
 
-/* News Arrows */
 .bottom-arrow,
 .top-arrow {
   position: absolute;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition: all 0.5s ease;
   transform: scale(1.01);
   backface-visibility: hidden;
-  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .bottom-arrow {
@@ -995,9 +938,7 @@ a {
   opacity: 1;
 }
 
-/* ==========================
-   Clients Say / Testimonials
-   ========================== */
+/* Testimonials */
 .clients-say {
   background-color: #fbc120;
   padding-bottom: 470px;
@@ -1040,16 +981,16 @@ a {
   box-shadow: 0px 3px 60px #FFFFFF9A;
   opacity: 1;
   filter: drop-shadow(0px 3px 20px #FFFFFF9A);
-  background: #FFFFFFB2 0% 0% no-repeat padding-box;
+  background-color: #FFFFFFB2;
 }
 
 .slide.prev {
-  background: transparent linear-gradient(91deg, #FBC120 0%, #FFFFFF4D 100%) 0% 0% no-repeat padding-box;
+  background: linear-gradient(91deg, #FBC120 0%, #FFFFFF4D 100%);
   opacity: 0.9;
 }
 
 .slide.next {
-  background: transparent linear-gradient(270deg, #FBC120 0%, #FFFFFF4D 100%) 0% 0% no-repeat padding-box;
+  background: linear-gradient(270deg, #FBC120 0%, #FFFFFF4D 100%);
   opacity: 0.9;
 }
 
@@ -1114,15 +1055,12 @@ a {
   stroke: var(--color-white);
 }
 
-
 /* Footer */
-
 .footer {
   background-color: var(--color-deep-purple);
-  padding-top: 150px;
-  padding-bottom: 30px;
+  padding: 150px 0 30px;
   margin-top: -400px;
-  border-top-left-radius: 20vw;
+  border-radius: 20vw 0 0;
 }
 
 .footer-nav {
@@ -1168,7 +1106,7 @@ a {
 }
 
 /* ==========================
-   Responsive: Desktop (min 992px)
+   Responsive
    ========================== */
 @media (min-width: 992px) {
   .offcanvas {
@@ -1199,24 +1137,17 @@ a {
   }
 }
 
-/* ==========================
-   Responsive: max 1399.98px
-   ========================== */
 @media (max-width: 1399.98px) {
   .full-width-section {
     margin-top: -230px;
   }
 
   .news {
-    padding-top: 160px;
+    padding: 160px 0 90px;
   }
 
   .yellow-top {
     width: 20%;
-  }
-
-  .news {
-    padding-bottom: 90px;
   }
 
   .container-footer {
@@ -1232,9 +1163,6 @@ a {
   }
 }
 
-/* ==========================
-   Responsive: max 1199px
-   ========================== */
 @media (max-width: 1199px) {
   .full-width-section {
     margin-top: -200px;
@@ -1250,8 +1178,7 @@ a {
   }
 
   .services .container-l {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 0 40px;
     gap: 20px;
   }
 
@@ -1282,12 +1209,8 @@ a {
   .footer-logo img {
     max-width: 268px;
   }
-
 }
 
-/* ==========================
-   Responsive: Tablet (max 991.98px)
-   ========================== */
 @media (max-width: 991.98px) {
   .services .container-l {
     flex-direction: column;
@@ -1335,9 +1258,9 @@ a {
     padding-left: 20px;
     position: static;
     visibility: visible;
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 0 !important;
-    border-top: 1px solid rgba(0, 0, 0, 0.4);
   }
 
   .offcanvas-body .nav-link:hover,
@@ -1428,6 +1351,7 @@ a {
   .slide {
     flex: 0 0 50%;
     max-width: 50%;
+    padding: 25px 30px 40px 25px;
   }
 
   .news {
@@ -1436,10 +1360,6 @@ a {
 
   .pt-139 {
     padding-top: 90px !important;
-  }
-
-  .slide {
-    padding: 25px 30px 40px 25px;
   }
 
   .ls-1-2 {
@@ -1451,9 +1371,6 @@ a {
   }
 }
 
-/* ==========================
-   Responsive: max 768px
-   ========================== */
 @media (max-width: 768px) {
   .flex-col {
     flex-direction: column;
@@ -1473,7 +1390,7 @@ a {
 
   .case-studies {
     margin-top: -130px;
-    border-bottom-left-radius: 15vw;
+    border-radius: 15vw 0 0;
   }
 
   .hero-btn-custom,
@@ -1518,9 +1435,9 @@ a {
 
   .footer-nav-list {
     flex-direction: column;
-    gap: 0px;
     align-items: center;
     justify-content: center;
+    gap: 0;
   }
 
   .lh-83 {
@@ -1529,26 +1446,22 @@ a {
 
   .footer-social {
     flex-direction: column;
-    gap: 10px;
     align-items: center;
     justify-content: center;
+    gap: 10px;
     margin-top: 30px;
   }
 
   .copy-right {
     flex-direction: column;
-    gap: 0px;
     align-items: center;
     justify-content: center;
     text-align: center;
+    gap: 0;
     margin-top: 40px;
   }
-
 }
 
-/* ==========================
-   Responsive: Mobile (max 575.98px)
-   ========================== */
 @media (max-width: 575.98px) {
 
   .lh-130,
@@ -1562,7 +1475,8 @@ a {
   }
 
   .container,
-  .container-lg {
+  .container-lg,
+  .services .container-l {
     padding: 0 20px;
   }
 
@@ -1588,6 +1502,10 @@ a {
   .clients {
     margin-top: -80px;
     background-size: cover;
+  }
+
+  .client-info {
+    margin-bottom: 30px;
   }
 
   .grid-4 .box img {
@@ -1618,6 +1536,14 @@ a {
 
   .case-video1 .video-container {
     border-radius: 0 50px;
+  }
+
+  .item {
+    padding: 20px;
+  }
+
+  .scroll-box {
+    gap: 40px;
   }
 
   .news-rect1,
@@ -1687,8 +1613,6 @@ a {
     transform: scale(0.50);
   }
 
-
-
   .testimonial-card {
     padding: 20px;
     min-height: auto;
@@ -1704,6 +1628,7 @@ a {
 
   .slide {
     padding: 0 !important;
+    border-radius: 0px 50px;
   }
 
   .footer {
@@ -1717,12 +1642,8 @@ a {
   .footer-logo img {
     max-width: 180px;
   }
-
 }
 
-/* ==========================
-   Responsive: Extra Small (max 380px)
-   ========================== */
 @media (max-width: 380px) {
 
   .btn1,
