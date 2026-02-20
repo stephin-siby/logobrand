@@ -156,12 +156,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Resize
-    window.addEventListener('resize', () => {
-        // Recalculate without animation
-        track.style.transition = 'none';
-        updateCarousel(false);
+    // Use ResizeObserver for reliable layout-aware resize detection
+    let resizeRafId;
+    const resizeObserver = new ResizeObserver(() => {
+        cancelAnimationFrame(resizeRafId);
+        resizeRafId = requestAnimationFrame(() => {
+            track.style.transition = 'none';
+            void track.offsetHeight;
+            updateCarousel(false);
+        });
     });
+    resizeObserver.observe(container);
 
     function moveSlide(direction) {
         if (isTransitioning) return;
